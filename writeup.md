@@ -12,7 +12,11 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/grayscale.jpg "Grayscale"
+[gray]: ./images/gray.jpg "Grayscale"
+[canny]: ./images/canny.jpg
+[canny_roi]: ./images/canny_roi.jpg
+[hough]: ./images/hough.jpg
+[result]: ./images/result.jpg
 
 ---
 
@@ -28,13 +32,19 @@ the left and right lane. In all, the pipeline consists of:
 
 * Change the Picture into Grayscale
 
-![alt text][image1]
+![alt text][gray]
 
 * Use Canny detection to extract edge information by computing the largest gradient
 
+![alt text][canny]
+
 * Compute Region of Interest
 
-* Apply Hough Transforms to return line candidates
+![alt text][canny_roi]
+
+* Apply Hough Transforms to return line candidates, which gives
+
+![alt text][hough]
 
 * Since we have a strong prior that  there is always a left and right lane, so I simply
 group the lines returned by Hough transform into two groups. The grouping is based on 
@@ -44,6 +54,7 @@ After the grouping, the mean slope and bias on the x-axis is computed in each gr
 serves as the parameters of the left and right lane. 
 During the voting, lines with large slope (absolute value > 2) are discarded
 
+![alt text][result]
 
 #### Challenge Part
 The Challenge video is interesting, I find out there are several challenges in this sample:
